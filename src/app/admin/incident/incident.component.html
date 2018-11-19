@@ -1,0 +1,22 @@
+
+
+
+<div class="top-bar">
+        <a href="#"> <img class="logo" src="http://psiog.com/logo.png">
+        </a>
+             <div class="top-bar-title">PSIOG Digital - 3.0</div>
+             <div class="menu">
+                 <div *ngIf = "theUser">
+                 <ul>
+                    <li class="nav-menu1"><a (click)="chooseMode('create')">Create Incident</a></li>
+                    <li *ngIf="menuChoice" class="nav-menu3"><a [routerLink]="['/admin/incidents']" (click)="chooseMode('')">Manage Incidents</a></li>
+                    <li class="nav-menu2"><a (click)="logout()">Logout</a></li>
+                 </ul>
+                </div>
+             </div>
+     </div>
+
+     <div style="position: absolute; top: 20%; left: 20%; max-width: 60%;" [ngSwitch]="menuChoice">
+        <div *ngSwitchCase="'create'"><create-incident></create-incident></div>
+        <div *ngSwitchDefault><h1>Default</h1></div>
+     </div>
