@@ -1,0 +1,34 @@
+    <div id="id01" class="modal">
+        <form class="modal-content" >
+                <h2 style="text-align:center">Log In</h2>
+          <div class="imgcontainer">
+            <img src="https://i.imgur.com/dGo8DOk.jpg" alt="Avatar" class="avatar">
+          </div>
+      
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" id="email" name="email" 
+            [(ngModel)]="email" required #em="ngModel">
+            <div [hidden]="em.valid || em.pristine" class="alert callout">
+                <script> alert("Email is required"); </script> 
+            </div>
+      
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" id="password1" name="password1" 
+            [(ngModel)]="password1" required #pwd1="ngModel">
+            <div [hidden]="em.valid || em.pristine" class="alert callout">
+                <script> alert("Password required"); </script> 
+            </div>
+
+            <div *ngIf="passwordFail">
+               <script> alert("Passwords do not match"); </script> 
+            </div>
+
+            <button type="button" (click)="login()">Login</button>
+            <button type="button" (click)="signup()">Sign Up</button>
+          </div>
+          <div>
+              <button (click)="cancel()" class="cancelbtn" type="button">Back to Home</button>
+          </div>
+        </form>
+      </div>
