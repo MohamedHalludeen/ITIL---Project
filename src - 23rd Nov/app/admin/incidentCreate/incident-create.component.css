@@ -1,0 +1,31 @@
+
+.mainTitle {
+    max-width: 100%;
+}
+
+label {
+    font-size: 20px;
+}
+
+.btn .success {
+    background-color: lightgreen;
+}
+
+.btn .cancel {
+    background-color: lightcoral;
+}
+
+input[type=text] textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:focus textarea:focus {
+    border: 3px solid #555;
+}
