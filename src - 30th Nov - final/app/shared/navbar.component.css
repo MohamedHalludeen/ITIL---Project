@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+.top-bar {
+    background-color: #96C1BC;
+    padding: 0%;
+    margin: 0%;
+    height: 10%;
+    width: 100%;
+}
+
+.top-bar .logo {
+    position: absolute;
+    top:0%;
+    left:2%;
+    display: block;
+    width: 160px;
+    height: 53px;
+}
+
+.top-bar-title {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 22px;
+    color: #DDD63C;
+    text-align: center;
+}
+
+.nav-menu a {
+    color: #DDD63C;
+    font-family: 'Permanent Marker', cusive;
+    text-decoration: none;
+    position: absolute;
+    top: 0%;
+    right: 2%;
+    font-size: 15px;
+}
+
+.nav-menu {
+    list-style-type: none;
+    display: inline;
+}
