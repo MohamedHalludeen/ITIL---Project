@@ -1,0 +1,39 @@
+   
+    <div id="id01" class="modal">
+        <form class="modal-content" >
+        <h2 style="text-align: center">Register your account here..!</h2>
+          <div class="imgcontainer">
+            <img src="https://i.imgur.com/dGo8DOk.jpg" alt="Avatar" class="avatar">
+          </div>
+      
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" id="email" name="email" 
+            [(ngModel)]="email" required #em="ngModel">
+            <div [hidden]="em.valid || em.pristine" class="alert callout">
+                <script> alert("Email is required"); </script> 
+            </div>
+      
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" id="password1" name="password1" 
+            [(ngModel)]="password1" required #pwd1="ngModel">
+            <div [hidden]="em.valid || em.pristine" class="alert callout">
+                <script> alert("Password required"); </script> 
+            </div>
+
+            <label for="psw"><b>Confirm Password</b></label>
+            <input type="password" placeholder="Confirm Password" id="password2" name="password2" 
+            [(ngModel)]="password2" required #pwd2="ngModel">
+            <div [hidden]="em.valid || em.pristine" class="alert callout">
+                <script> alert("Confirm Password"); </script> 
+            </div>
+
+            <div *ngIf="passwordFail">
+               <script> alert("Passwords do not match"); </script> 
+            </div>
+
+            <button type="button" (click)="signUp()">Sign Up</button>
+            <button type="button" class="cancelbtn" (click)="cancel()">Cancel</button>
+          </div>
+        </form>
+      </div>

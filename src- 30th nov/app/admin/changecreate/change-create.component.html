@@ -1,0 +1,61 @@
+<div class="mainContainer"><div class="mainTitle">
+    <div style="left: 40%;">
+        <h1>Create an change</h1>
+    </div>
+</div>
+
+<form>
+    <h1 style="left: 40%">Create Change</h1>
+    <div style="left: 20%; width: 100%" class="title">
+        <div>
+            <label>Title<br>
+            <input type="text" style="left: 20%; width: 600px;" [(ngModel)]="changeTitle" name="changeTitle" required #pschangeTitle="ngModel">
+            </label>        
+        </div>
+    </div>
+    <div style="left: 20%;" class="content">
+            <div>
+                <label>Description<br>
+                <textarea style="height: 10%; width: 600px;" rows="15" id="content" [(ngModel)]="changeContent" name="changeContent" required #pschangeContent="ngModel">
+                </textarea>
+                </label>        
+            </div>
+        </div>
+        <div style="left: 20%;" class="sdate">
+                <div>
+                    <label>Start time<br>
+                    <input type="date" style="width: 250px" [(ngModel)]="changeStartDate" name="startDate" required #pschangeStartDate ="ngModel">
+                    </label>        
+                </div>
+        </div>
+            <div style="left: 60%; display: inline-block" class="edate">
+                <div>
+                    <label>End time<br>
+                    <input type="date" style="width: 250px" [(ngModel)]="changeEndDate" name="endDate" required #pschangeEndDate ="ngModel">
+                    </label>        
+                </div>
+            </div>
+            <div style="left: 20%;" class="assignedTo">
+                    <div>
+                        <label>Assigned To<br>
+                        <input type="text" style="width: 600px" [(ngModel)]="changeAssignedTo" name="assignedTo" required #pschangeAssignedTo ="ngModel">
+                        </label>        
+                    </div>
+            </div>
+            <div style="left: 20%;" class="impactService">
+                    <div>
+                        <label>Impacted service<br>
+                        <input type="text" style="width: 600px" [(ngModel)]="changeImpactService" name="impactService" required #pschangeImpactService ="ngModel">
+                        </label>        
+                    </div>
+            </div>
+        <div style="left: 20%;" class="btn">
+                <div>
+                    <div>
+                        <button style="background-color: green; color:white" class="success" type="button"  (click)="createchange()">Create</button>
+                        <button style="background-color: red; color:white" class="cancel" type="button" (click)="cancel()">Cancel</button>
+                    </div>      
+                </div>
+         </div>
+</form>
+</div>
