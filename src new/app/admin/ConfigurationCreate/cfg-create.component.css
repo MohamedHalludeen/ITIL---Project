@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Anton");
+
+.mainContainer {
+    font-family: 'Anton',cursive;
+}
+
+
+.mainTitle {
+    max-width: 100%;
+}
+
+label {
+    font-size: 20px;
+}
+
+.btn .success {
+    background-color: lightgreen;
+    font-family: 'Anton',cursive;
+    margin: 4px 2px;
+    
+}
+
+.btn .cancel {
+    background-color: lightcoral;
+    font-family: 'Anton',cursive;
+    margin: 4px 2px;
+}
+
+input[type=text] textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    font-family: 'Anton',cursive;
+}
+
+input[type=text]:focus textarea:focus {
+    border: 3px solid #555;
+    font-family: 'Anton',cursive;
+}
+
+
+
+.nav-menu4 a {
+    color: white;
+    font-family: 'Anton', cusive;
+    text-decoration: none;
+    position: absolute;
+    top: 0%;
+    right: 40%;
+    font-size: 15px;
+    display: block;
+}

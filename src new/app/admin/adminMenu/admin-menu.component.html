@@ -1,0 +1,118 @@
+<!-- 
+<div class="top-bar">
+        <a href="#"> <img class="logo" src="http://logodust.com/img/free/logo28.png">
+        </a>
+             <div class="top-bar-title">CMV Management V2.0</div>
+             <div class="menu">
+                 <div *ngIf = "theUser">
+                 <ul>
+                     <li class="nav-menu1"><a [routerLink]="['/admin/Configuration']"><button class="button button1">Manage Configurations</button></a></li>
+                     <li class="nav-menu2"><a [routerLink]="['/admin/problem']"><button class="button button1">Manage Problem</button></a></li>
+                     <li class="nav-menu6"><a [routerLink]="['/admin/asset']"><button class="button button1">Manage Asset</button></a></li>
+                     <li class="nav-menu3"><a [routerLink]="['/admin']"><button class="button button1">Home</button></a></li>
+                     <li class="nav-menu4"><a (click)="logout()"><button class="button button1">Logout</button></a></li>
+                     <li class="nav-menu5">current user {{theUser}} </li>
+                 </ul>
+                </div>
+             </div>
+</div> -->
+
+<div>
+
+  <div class="top-bar">
+          <a href="#"> <img class="logo" src="http://www.psiog.com/logo.png">
+          </a>
+               <div class="top-bar-title">PSIOG Digital - 3.0</div>
+               <div class="menu">
+                   <div *ngIf = "theUser">
+                   <ul>
+                       <li class="nav-menu2"><a (click)="logout()">Logout</a></li>
+                       <li class="nav-menu4">{{theUser}}</li>
+                   </ul>
+                  </div>
+               </div>
+       </div>
+  
+  <div class="container">
+      <div class="verticalNavBar">    
+          <ul>
+                  <li><a class="active" href="#home">Home</a></li>
+                  <li><a [routerLink]="['/admin/change']">Change</a></li>
+                  <li><a [routerLink]="['/admin/incidents']">Incidents</a></li>
+                  <li><a [routerLink]="['/admin/release']">Release & Deployment</a></li>
+                  <li><a [routerLink]="['/admin/Configuration']">Configurations</a></li>
+                  <li><a [routerLink]="['/admin/problem']">Problem</a></li>
+                  <li><a [routerLink]="['/admin/asset']">Asset</a></li>
+                  <li><a (click)="logout()">Log out</a></li>
+          </ul>
+      </div>
+        <div class="flip-box">
+                <div class="flip-box-inner">
+                  <div class="flip-box-front">
+                    <h2>An unplanned interruption to an IT Service or a reduction in the Quality of an IT Service. Failure of a Configuration Item that has not yet impacted one or more Services is also an Incident. </h2>
+                  </div>
+                  <div class="flip-box-back">
+                    <h2>For example: Failure of one disk from a mirror set.</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-box">
+                <div class="flip-box-inner">
+                  <div class="flip-box-front">
+                    <h2>A cause of one or more Incidents. The cause is not usually known at the time a Problem Record is created </h2>
+                  </div>
+                  <div class="flip-box-back">
+                    <h2>Problem Management Process is responsible for further investigation</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-box">
+                <div class="flip-box-inner">
+                  <div class="flip-box-front">
+                    <h2>Change Management is the addition, modification or removal of anything that could have an effect on IT Services</h2>
+                  </div>
+                  <div class="flip-box-back">
+                    <h2>The Scope should include all IT Services, Configuration Items, Processes, Documentation etc.</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-box">
+                <div class="flip-box-inner">
+                  <div class="flip-box-front">
+                    <h2>Release management is the A collection of hardware/software documentation, Processes or other Components required to implement one or more approved Changes to IT Services.</h2>
+                  </div>
+                  <div class="flip-box-back">
+                    <h2>The contents of each Release are managed, tested, and deployed as a single entity.​</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="flip-box">
+                    <div class="flip-box-inner">
+                      <div class="flip-box-front">
+                        <h2>A request from a User for information, or advice, or for a Standard Change or for Access to an IT Service. For example to reset a password, or to provide standard IT Services for a new User</h2>
+                      </div>
+                      <div class="flip-box-back">
+                        <h2>Service Requests are usually handled by a Service Desk, and do not require an RFC to be submitted.</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flip-box">
+                        <div class="flip-box-inner">
+                          <div class="flip-box-front">
+                            <h2>Note that a parent ticket can contain any of the child classifications below it. This means that a Release can contain any Problems, for example, without a Change between them in the hierarchy.</h2>
+                          </div>
+                          <div class="flip-box-back">
+                            <h2>When a parent ticket, such as a Release, is updated, a technician can elect to update/close all the child tickets, such as Changes, Problems, Major Incidents, and Incidents/Service Requests. that are nestled within it.</h2>
+                          </div>
+                        </div>
+                      </div>
+
+</div>
+</div>   
+
+<!-- <div class="container">
+    <img src="http://logodust.com/img/free/logo28.png" style="position: absolute; left: 30%; top: 20%; width: 40%; height: 60%;">
+    <h2 style="text-align: center">Configuration Management V2.0</h2>
+    <h3 style="text-align: center">This area is for authorized users only!</h3>
+</div> -->
+

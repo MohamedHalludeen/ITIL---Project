@@ -1,0 +1,53 @@
+<div class="mainContainer"><div class="mainTitle">
+    <div style="left: 20%;">
+        <h1>Create a Config Request</h1>
+    </div>
+</div>
+<form>
+    <div style="left: 20%;" class="title">
+        <div>
+            <label>Configuration title<br>
+            <input type="text" [(ngModel)]="cfgTitle" name="cfgTitle" required #psTitle="ngModel">
+            </label>        
+        </div>
+    </div>
+    <div style="left: 20%;" class="title">
+            <div>
+                <label>cfg type<br>
+                    <select type="text" [(ngModel)]="cfgtype" name="cfgtype" required #psTitle="ngModel">
+                    <option value="Router"><button style="cursor: pointer" class="btn" type="text" [(ngModel)]="cfgtype" name="cfgtype" required #psTitle="ngModel">Router</button></option>
+                    <option value="computer"><button style="cursor: pointer" class="btn btn2" type="text" [(ngModel)]="cfgtype" name="cfgtype" required #psTitle="ngModel">Computer</button></option>
+                    <option value="IP Phone"><button style="cursor: pointer" class="btn btn3" type="text" [(ngModel)]="cfgtype" name="cfgtype" required #psTitle="ngModel">IP Phone</button></option>
+                    <option value="Laptop"><button style="cursor: pointer" class="btn btn4" type="text" [(ngModel)]="cfgtype" name="cfgtype" required #psTitle="ngModel">Laptop</button></option>
+                    <option value="Server"><button style="cursor: pointer" class="btn btn5" type="text" [(ngModel)]="cfgtype" name="cfgtype" required #psTitle="ngModel">Server</button></option>
+                </select>
+                </label>        
+            </div>
+        </div>
+
+        <div style="left: 20%;" class="title">
+            <div>
+                <label>Resource ID<br>
+                <input type="text" [(ngModel)]="cfgresource" name="cfgresource" required #psTitle="ngModel">
+                </label>        
+            </div>
+        </div>
+    <div style="left: 20%;" class="content">
+            <div>
+                <label>Config Specifications<br>
+                <textarea rows="10" id="content" [(ngModel)]="cfgContent" name="cfgContent" required #psContent="ngModel">
+                </textarea>
+                </label>        
+            </div>
+        </div>
+        <div style="left: 20%;" class="btn">
+                <div>
+                    <div>
+                        <button class="success" type="button" [disabled]="!psTitle.valid || !psContent.valid" 
+                         (click)="createcfg()">Create</button>
+                         <a [routerLink]="['/admin']"> <button class="cancel" type="button" (click)="cancel()">Cancel</button></a>
+                    </div>      
+                </div>
+         </div>
+</form>
+</div>

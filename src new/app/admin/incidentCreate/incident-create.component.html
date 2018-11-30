@@ -1,0 +1,33 @@
+<div class="mainContainer"><div class="mainTitle">
+    <div style="left: 20%;">
+        <h1>Create an incident</h1>
+    </div>
+</div>
+
+<form>
+    <div style="left: 20%;" class="title">
+        <div>
+            <label>Incident title<br>
+            <input type="text" style="width: 60%;" [(ngModel)]="incidentTitle" name="incidentTitle" required #psTitle="ngModel">
+            </label>        
+        </div>
+    </div>
+    <div style="left: 20%;" class="content">
+            <div>
+                <label>Incident Content<br>
+                <textarea style="height: 30%; width: 60%;" rows="15" id="content" [(ngModel)]="incidentContent" name="incidentContent" required #psContent="ngModel">
+                </textarea>
+                </label>        
+            </div>
+        </div>
+        <div style="left: 20%;" class="btn">
+                <div>
+                    <div>
+                        <button style="background-color: green; color:white"class="success" type="button" [disabled]="!psTitle.valid || !psContent.valid" 
+                         (click)="createIncident()">Create</button>
+                        <button style="background-color: red; color:white" class="cancel" type="button" (click)="cancel()">Cancel</button>
+                    </div>      
+                </div>
+         </div>
+</form>
+</div>

@@ -1,0 +1,160 @@
+/* Full-width input fields */
+input[type=email], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    display: inline-block
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    
+    
+    background-color: #f44336;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    display: inline-block
+
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: block; /* Hidden by default */
+    position: relative; /* Stay in place */
+     /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+ /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-image: url('https://wallpapercave.com/wp/wp3661694.jpg');
+    padding-top: 30px;
+}
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 2% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+}
+
+
+.form__validate {
+    background-size: 25px;
+    background-position: right 5px center;
+    background-repeat: no-repeat;
+  }
+  
+  .form__validate--focused:focus:invalid {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/5144/ios7-close-empty.svg");
+  }
+  
+  .form__validate--focused:focus:valid {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/5144/ios7-checkmark-empty.svg");
+  }
+  
+  .form__validate--blurred:not(:focus):invalid {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/5144/ios7-close-empty.svg");
+  }
+  
+  .form__validate--blurred:not(:focus):valid {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/5144/ios7-checkmark-empty.svg");
+  }
+  
+  
+  /* Stylistic, feel free to ignore below this line */
+  body { font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  
+  form { margin: 10rem 0; }
+  
+  .form__field-group {
+    max-width: 30%;
+    margin: 1.5em;
+  }
+  
+  .form__label {
+    display: block;
+    font-weight: bold; 
+    line-height: 2;
+  }
+  
+  .form__text {
+    width: 100%;
+    padding: 0 .25em;
+    line-height: 1.5;
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  input:required {
+    box-shadow: 4px 4px 20px rgb(76, 219, 124);
+    border: 1px solid rgb(85, 209, 101);
+    
+    
+}
+
+/**
+ * style input elements that have a required
+ * attribute and a focus state
+ */
+input:required:focus {
+    box-shadow: 4px 4px 20px rgb(219, 76, 76);
+    border: 1px solid rgb(224, 110, 75);
+    
+  outline: none;
+}
+
+/**
+ * style input elements that have a required
+ * attribute and a hover state
+ */
+input:required:hover {
+  opacity: 1;
+}
