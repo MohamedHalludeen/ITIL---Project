@@ -1,0 +1,308 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+/* .top-bar {
+    background-color: green;
+    position: absolute;
+    padding: 0%;
+    margin: 0%;
+    height: 15%;
+    width: 100%;
+}
+
+.top-bar .logo {
+    position: absolute;
+    top:-10%;
+    right:0%;
+    display: block;
+    width: 140px;
+    height: 73px;
+}
+
+.top-bar-title {
+    font-family: 'Roboto',sans-serif;
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    left: 0%;
+    top: 70%;
+    display: inline;
+    
+}
+
+.nav-menu1 a {
+    color: white;
+    font-family: 'Roboto',sans-serif;
+    text-decoration: none;
+    position: absolute;
+    top: 0%;
+    left: 20%;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline;
+}
+.nav-menu2 a {
+    color: white;
+    font-family: 'Roboto',sans-serif;
+    text-decoration: none;
+    position: absolute;
+    top: 0%;
+    left: 35%;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline;
+}
+.nav-menu6 a {
+    color: white;
+    font-family: 'Roboto',sans-serif;
+    text-decoration: none;
+    position: absolute;
+    top: 0%;
+    left: 45%;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline;
+}
+.nav-menu3 a {
+    color: white;
+    font-family: 'Roboto',sans-serif;
+    text-decoration: none;
+    position: absolute;
+    top: 0%;
+    right: 18%;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline
+}
+.nav-menu4 a {
+    color: white;
+    font-family: 'Roboto',sans-serif;
+    text-decoration: none;
+    position: absolute;
+    top: 0%;
+    right: 10%;
+    font-size: 15px;
+    cursor: pointer;
+    display: inline;
+}
+
+.nav-menu5{
+    color: white;
+    font-family: 'Roboto',sans-serif;
+    text-decoration: none;
+    position: absolute;
+    top: 70%;
+    right: 10%;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.nav-menu1 .nav-menu2 .nav-menu3 .nav-menu4 .nav-menu6{
+    list-style-type: none;
+    display: block;
+}
+
+li {
+    list-style-type: none;
+}
+
+.container {
+    position: absolute;
+    top: 15%;
+    padding: 0%;
+    margin-top: 0%;
+    width: 100%;
+    height: 100%;
+    font-family: 'Anton',cursive;
+}*/
+/* .button {
+    background-color: #4CAF50; 
+    border-radius: 8px;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Anton',cursive;
+}
+
+.button1 {
+    background-color: green; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}  */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+div {
+    font-family: 'Roboto', sans-serif;
+}
+
+.top-bar {
+    background-color: #96C1BC;
+    position: absolute;
+    padding: 0%;
+    margin: 0%;
+    height: 10%;
+    width: 100%;
+}
+
+.top-bar .logo {
+    position: absolute;
+    top:0%;
+    left:2%;
+    display: block;
+    width: 160px;
+    height: 53px;
+}
+
+.top-bar-title {
+    font-family: 'Roboto',sans-serif;
+    font-size: 22px;
+    color: #DDD63C;
+    text-align: center;
+}
+
+.nav-menu2  a {
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.nav-menu4 {
+    color: white;
+    font-display: lighter;
+    text-decoration: none;
+    position: absolute;
+    top: 0%;
+    right: 3%;
+    font-size: 20px;
+}
+
+.nav-menu1 .nav-menu2 {
+    list-style-type: none;
+    display: block;
+}
+
+li {
+    list-style-type: none;
+}
+
+.container {
+    position: absolute;
+    top: 10%;
+    padding: 0%;
+    margin-top: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #F1F1F1;
+}
+
+.verticalNavBar {
+    position: absolute;
+    left:0%;
+    height: 95%;
+    width: 20%;
+    border-right: 1px #333;
+}
+
+.displayArea {
+    position: absolute;
+    left:20%;
+    height: 95%;
+    width: 80%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #f1f1f1;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #00C9C6;
+    color: black;
+}
+
+li a:hover:not(.active) {
+    background-color: #333333;
+    color: white;
+}
+a {
+    cursor: pointer;
+}
+
+
+
+body {
+    font-family: 'Roboto',sans-serif;
+    top:25%
+  }
+  
+  .flip-box {
+    background-color: transparent;
+    width: 28.5%;
+    float: right;
+    height: 35%;
+    border: 1px solid #f1f1f1;
+    position: relative;
+    perspective: 1000px;
+    display: inline-block;
+    
+  }
+  
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side */
+  .flip-box-front {
+    background-color: skyblue;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-box-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+  }

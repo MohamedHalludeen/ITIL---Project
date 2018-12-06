@@ -1,0 +1,89 @@
+<div class="top-bar">
+        <a href="#"> <img class="logo" src="http://www.psiog.com/logo.png">
+        </a>
+             <div class="top-bar-title">PSIOG Digital - 3.0</div>
+             <div class="menu">
+                 <div *ngIf = "theUser">
+                 <ul>
+                    <li class="nav-menu1"><a (click)="chooseMode('create')">Create Incident</a></li>
+                    <li *ngIf="menuChoice" class="nav-menu3"><a [routerLink]="['/admin']" (click)="chooseMode('')">Home</a></li>
+                    <li class="nav-menu2"><a (click)="logout()">Logout</a></li>
+                    <li class="nav-menu4">{{theUser}}</li>
+                 </ul>
+                </div>
+             </div>
+     </div>
+     <div class="container">
+     <div class="verticalNavBar">    
+         <ul>
+                 <li><a *ngIf="theUser ==='admin@psiog.com'" [routerLink]="['/admin']">Home</a>
+                  <a *ngIf="theUser != 'admin@psiog.com' " [routerLink]="['/admin/user']">Home</a></li>
+                 <li><a [routerLink]="['/admin/change']">Change</a></li>
+                 <li><a class="active" [routerLink]="['/admin/incident']">Incident</a></li>
+                 <li><a [routerLink]="['/admin/release']">Release & Deployment</a></li>
+                 <li><a [routerLink]="['/admin/Configuration']">Configurations</a></li>
+              <li><a [routerLink]="['/admin/problem']">Problem</a></li>
+              <li><a [routerLink]="['/admin/asset']">Asset</a></li>
+                 <li><a (click)="logout()">Log out</a></li>
+         </ul>
+     </div>
+     <div style="position: absolute; top: 20%; left: 30%; max-width: 100%;" [ngSwitch]="menuChoice">
+        <div *ngSwitchCase="'create'"><create-incident></create-incident></div>
+        <div *ngSwitchDefault>
+     <div *ngIf = "formDisplay" class="row">
+        <div style="width: 850px;" class="row" *ngFor="let incident of incidents">
+           <div class="spacer"> 
+              <div class="media-object">
+               <div class="media-object-section main-section">
+                  <h4 style="font-weight: bold">{{incident.title}}</h4>
+                  <p>{{incident.content | truncate:140}}</p>
+                  <h4 style="font-weight: bold">Status :  {{incident.status}}</h4>
+                  <p>Created by: {{incident.userName}}</p>
+                  <div>
+                     <a style="padding: 10px; color: #333" class="btn" (click)="editIncident(incident, incident.status)" >Edit</a>    
+                     <a *ngIf="theUser === incident.userName" style="left: 10px; padding: 10px; color: red" class="btn" (click)="closeIncident(incident, 'closed', theUser, incident.status)">Close</a>
+                     <a *ngIf="theUser === 'admin@psiog.com'" style="left: 10px; padding: 10px; right:10px; color: blue" class="btn" (click)="closeIncident(incident,'rejected', theUser, incident.status)">Reject</a>
+                     <a *ngIf="theUser === 'admin@psiog.com'" style="left: 10px; padding: 10px; color: green" class="btn" (click)="closeIncident(incident,'resolved', theUser, incident.status)">Resolve</a>
+                  </div>
+               </div>
+              </div>
+           </div><br> 
+        </div>
+     </div>
+   </div>
+     <div *ngIf = "!formDisplay" class="row">
+         <form>
+            <div class="row">
+               <div class="" style="left:20%;">
+                  <label>Incident Title<br>
+                     <input type="text" [(ngModel)]="singleIncident.title"
+                     name="editIncident" required #psTitle="ngModel">
+                  </label>
+               </div>
+            </div>
+            <div class="row">
+               <div class="" style="left:20%;">
+                  <label>Incident Content<br>
+                     <textarea rows="15" id="content" [(ngModel)]="singleIncident.content" 
+                     name="editContent" required #psContent="ngModel"></textarea>
+                  </label>
+               </div>
+            </div>
+            <div style="left: 20%;" class="btn">
+               <div>
+                   <div>
+                       <button style="background-color: green; color:white"class="success" type="button" [disabled]="!psTitle.valid || !psContent.valid" 
+                        (click)="updateIncident(singleIncident)">Update Incident</button>
+                       <button style="background-color: red; color:white" class="cancel" type="button" (click)="cancelEdit()">Cancel</button>
+                   </div>      
+               </div>
+            </div>
+         </form>
+     </div>
+
+
+
+   </div>
+</div>
+
+

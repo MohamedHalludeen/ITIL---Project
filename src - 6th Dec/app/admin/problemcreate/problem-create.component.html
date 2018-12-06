@@ -1,0 +1,36 @@
+<div class="mainContainer"><div class="maintitle">
+        <div style="left: 20%;">
+            <h1>Create a problem Request</h1>
+        </div>
+    </div>
+    
+    
+    
+    <form>
+        <div style="left: 20%;" class="title">
+            <div>
+                <label>problem title<br>
+                <input type="text" [(ngModel)]="problemtitle" name="problemtitle" required #pstitle="ngModel">
+                </label>        
+            </div>
+        </div>
+        
+        <div style="left: 20%;" class="content">
+                <div>
+                    <label>problem content<br>
+                    <textarea rows="10" id="content" [(ngModel)]="problemcontent" name="problemcontent" required #pscontent="ngModel">
+                    </textarea>
+                    </label>        
+                </div>
+            </div>
+            <div style="left: 20%;" class="btn">
+                    <div>
+                        <div>
+                            <button class="success" type="button" [disabled]="!pstitle.valid || !pscontent.valid" 
+                             (click)="createproblem()">Create</button>
+                             <a [routerLink]="['/admin']">  <button class="cancel" type="button" (click)="cancel()">Cancel</button></a>
+                        </div>      
+                    </div>
+             </div>
+    </form>
+    </div>

@@ -1,0 +1,109 @@
+<div class="top-bar">
+        <a href="#"> <img class="logo" src="http://www.psiog.com/logo.png">
+        </a>
+             <div class="top-bar-title">PSIOG Digital - 3.0</div>
+             <div class="menu">
+                 <div *ngIf = "theUser">
+                 <ul>
+                    <li class="nav-menu1"><a (click)="chooseMode('create')">Create change</a></li>
+                    <li class="nav-menu2"><a (click)="logout()">Logout</a></li>
+                    <li class="nav-menu4">{{theUser}}</li>
+                 </ul>
+                </div>
+             </div>
+     </div>
+     <div class="container">
+     <div class="verticalNavBar">    
+         <ul>
+                 <li><a *ngIf="theUser ==='admin@psiog.com'" [routerLink]="['/admin']">Home</a>
+                  <a *ngIf="theUser != 'admin@psiog.com' " [routerLink]="['/admin/user']">Home</a></li>
+                 <li><a class="active" [routerLink]="['/admin/change']">Change</a></li>
+                 <li><a [routerLink]="['/admin/incidents']">Incident</a></li>
+                 <li><a [routerLink]="['/admin/release']">Release & Deployment</a></li>
+                 <li><a [routerLink]="['/admin/Configuration']">Configurations</a></li>
+              <li><a [routerLink]="['/admin/problem']">Problem</a></li>
+              <li><a [routerLink]="['/admin/asset']">Asset</a></li>
+                 <li><a (click)="logout()">Log out</a></li>
+         </ul>
+     </div>
+     <div style="position: absolute; top: 10%; left: 25%; width: 100%" [ngSwitch]="menuChoice">
+        <div *ngSwitchCase="'create'"><create-change></create-change></div>
+        <div *ngSwitchDefault>
+     <div *ngIf = "formDisplay" class="row">
+        <div style="width: 850px;" class="row">
+           <div class="spacer"> 
+              <div class="media-object">
+                     <div class="media-object-section main-section">
+                           <table id="customers">
+                              <tr>
+                                 
+                                 <th>TITLE</th>
+                                 <th>DESCRIPTION</th>
+                                 <th>START TIME</th>
+                                 <th>END TIME</th>
+                                 <th>ASSIGNED TO</th>
+                                 
+                                 <th>IMPACTED SERVICE</th>
+                                 <th>CREATED BY</th>
+                                 <th>STATUS</th>
+                              </tr>
+                              <tr *ngFor="let change of changes">
+                         
+                          <td><p>{{change.title}}</p></td>
+                          <td><p>{{change.description | truncate:140}}</p></td>
+                         <td><p>{{change.startTime}}</p></td>
+                         <td><p>{{change.endTime}}</p></td>
+                         <td><p>{{change.assignedTo}}</p></td>
+                        
+                         <td><p>{{change.impactService}}</p></td>
+                         <td><p>{{change.createdBy}}</p></td>
+                         <td><p>{{change.status}}</p></td>
+                         <td style="border: none; background-color:white"><div>
+                              <a style="text-decoration: none" class="btnEdit" (click)="editchange(change, change.status)" >Edit</a>    
+                           </div></td>
+                        </tr></table>
+                  <!-- <div>
+                     <a style="text-decoration: none" class="btnEdit" (click)="editchange(change, change.status)" >Edit</a>    
+                  </div> -->
+              </div>
+           </div><br> 
+        </div>
+     </div>
+   </div>
+     <div *ngIf = "!formDisplay" class="row">
+         <form>
+            <div class="row">
+               <div class="" style="left:20%;">
+                  <label>Status<br>
+                     <input type="text" [(ngModel)]="singlechange.status"
+                     name="editchange" required #psStatus="ngModel">
+                  </label>
+               </div>
+            </div>
+            <div class="row">
+               <div class="" style="left:20%;">
+                  <label>Resolution<br>
+                     <textarea rows="15" id="content" [(ngModel)]="singlechange.resolution" 
+                     name="editContent" required #psResolution="ngModel"></textarea>
+                  </label>
+               </div>
+            </div>
+            <div style="left: 20%;" class="btn">
+               <div>
+                   <div>
+                       <button style="background-color: green; color:white"class="success" type="button" [disabled]="!psStatus.valid || !psResolution.valid" 
+                        (click)="updatechange(singlechange)">Close change</button>
+                       <button style="background-color: red; color:white" class="cancel" type="button" (click)="cancelEdit()">Cancel</button>
+                   </div>      
+               </div>
+            </div>
+         </form>
+     </div>
+
+
+
+   </div>
+</div>
+</div>
+
+

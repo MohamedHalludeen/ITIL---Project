@@ -1,0 +1,105 @@
+
+
+
+<div class="top-bar">
+   <a href="#"> <img class="logo" src="http://www.psiog.com/logo.png">
+   </a>
+        <div class="top-bar-title">PSIOG Digital - 3.0</div>
+        <div class="menu">
+            <div *ngIf = "theUser">
+            <ul>
+               <li class="nav-menu1"><a (click)="chooseMode('create')">Create Asset</a></li>
+               
+               <li class="nav-menu2"><a (click)="logout()">Logout</a></li>
+               <li class="nav-menu4">{{theUser}}</li>
+            </ul>
+           </div>
+        </div>
+</div>
+
+<div class="container">
+<div class="verticalNavBar">    
+   <ul>
+           <li><a *ngIf="theUser ==='admin@psiog.com'" [routerLink]="['/admin']">Home</a>
+            <a *ngIf="theUser != 'admin@psiog.com' " [routerLink]="['/admin/user']">Home</a></li>
+           <li><a [routerLink]="['/admin/change']">Change</a></li>
+           <li><a [routerLink]="['/admin/incidents']">Incidents</a></li>
+           <li><a [routerLink]="['/admin/release']">Release & Deployment</a></li>
+           <li><a [routerLink]="['/admin/Configuration']">Configurations</a></li>
+           <li><a [routerLink]="['/admin/problem']">Problem</a></li>
+           <li><a class="active" [routerLink]="['/admin/asset']">Asset</a></li>
+           <li><a (click)="logout()">Log out</a></li>
+   </ul>
+</div>
+
+   <div style="position: absolute; top: 0%; left: 20%; max-width: 60%;" [ngSwitch]="menuChoice">
+      <div *ngSwitchCase="'create'"><create-asset></create-asset></div>
+      <div *ngSwitchDefault>
+          <div *ngIf = "formDisplay" class="row">
+                <div class="row" *ngFor="let asset of assets">
+                   <div class="spacer"> 
+                      <div class="media-object">
+        
+                        <div class="media-object-section main-section">
+                           <table id="customers">
+                              <tr>
+                                 <th>TITLE</th>
+                                 <th>TYPE</th>
+                                 <th>RESOURCE</th>
+                                 <th>CONTENT</th>
+                                 <th>STATUS</th>
+                                 <th>CREATED BY</th>
+                              </tr>
+                              <tr>
+                          <td> <h4 style="font-weight: bold">{{asset.title}}</h4></td>
+                          <td> <h4 style="font-weight: bold">{{asset.type}}</h4></td>
+                          <td> <h4 style="font-weight: bold">{{asset.resource}}</h4></td>
+                         <td>  <p>{{asset.content}}</p></td>
+                         <td>  <h4 style="font-weight: bold">Status :  {{asset.status}}</h4></td>
+                         <td><p>Created by: {{asset.userName}}</p></td></tr></table>
+                           <div>
+                              <button style= "cursor: pointer" class="btn1" (click)="editasset(asset)" >Edit</button>
+                              <button style= "cursor: pointer" class="btn2" (click)="closeasset(asset)" >Close asset</button>
+                          </div>
+                       </div>
+                      </div>
+                   </div> 
+                </div>
+             </div>
+        
+             <div *ngIf = "!formDisplay" class="row">
+                 <form>
+                    <div class="row1">
+                       <div class="" style="left:20%;">
+                          <label>Asset title<br>
+                             <input type="text" [(ngModel)]="singleasset.title"
+                             name="edittitle" required #pstitle="ngModel">
+                          </label>
+                       </div>
+                    </div>
+                    
+                    <div class="row1">
+                      <div class="" style="left:20%;">
+                         <label>Asset Content<br>
+                            <textarea rows="5" id="content" [(ngModel)]="singleasset.content" 
+                            name="editContent" required #psContent="ngModel"></textarea>
+                         </label>
+                      </div>
+                   </div>
+                    <div style="left: 20%;" class="btn">
+                       <div>
+                           <div>
+                               <button style="background-color: green; color:white"class="success" type="button" [disabled]="!pstitle.valid || !psContent.valid" 
+                                (click)="updateasset(singleasset)">Update Asset</button>
+                               <button style="background-color: red; color:white" class="cancel" type="button" (click)="cancelEdit()">Cancel</button>
+                           </div>      
+                       </div>
+                </div>
+                 </form>
+             </div>
+        
+        
+        
+           </div>
+        </div>
+        </div>

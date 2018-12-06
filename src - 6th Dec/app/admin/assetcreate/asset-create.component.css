@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+div{
+    font-family: 'Roboto',sans-serif;
+    }
+.mainContainer{
+    font-family: 'Roboto',sans-serif;
+}
+
+.mainTitle {
+    max-width: 100%;
+    font-family: 'Roboto',sans-serif;
+}
+
+label {
+    font-size: 20px;
+}
+
+.btn .success {
+    background-color: lightgreen;
+    font-family: 'Roboto',sans-serif;
+    margin: 4px 2px;
+    
+}
+
+.btn .cancel {
+    background-color: lightcoral;
+    font-family: 'Roboto',sans-serif;
+    margin: 4px 2px;
+}
+
+input[type=text] textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:focus textarea:focus {
+    border: 3px solid #555;
+}
+
+
+
